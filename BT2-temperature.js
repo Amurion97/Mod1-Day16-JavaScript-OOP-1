@@ -14,3 +14,5 @@ class Temperature {
 }
 let aTemperature = new Temperature(25);
 aTemperature.printConversion();
+console.log(typeof Date.now());
+console.log(Date.now())
