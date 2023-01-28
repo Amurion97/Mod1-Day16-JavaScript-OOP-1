@@ -1,8 +1,8 @@
 class TextMessage {
-    sender = "";
-    receiver = "";
-    date;
-    content = "";
+    sender
+    receiver
+    date
+    content
 
     constructor(sender, receiver, content, date) {
         this.sender = sender;
@@ -161,7 +161,9 @@ document.addEventListener("click", function (event) {
             if (phone.checkOnStatus() === false) {
             } else {
                 let sentMessage = phone.sendMessage();
-                phoneBook[phoneIDs[sentMessage.receiver]].receiveMessage(sentMessage);
+                if (phoneIDs[sentMessage.receiver] !== undefined){
+                    phoneBook[phoneIDs[sentMessage.receiver]].receiveMessage(sentMessage);
+                }
                 // console.log(phone.currentText);
                 console.log(phone);
             }
