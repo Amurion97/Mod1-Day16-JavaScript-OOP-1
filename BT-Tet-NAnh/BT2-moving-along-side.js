@@ -56,6 +56,7 @@ function initialize(image) {
     image.style.height = "200px";
     image.style.borderRadius = "50%";
     image.style.border = `${borderWidth} solid black`;
+    console.log(image.style.borderWidth);
 }
 
 function moveRight(object) {
