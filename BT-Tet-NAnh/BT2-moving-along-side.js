@@ -6,6 +6,7 @@ let catPic = document.getElementById("cat-pic");
 window.onload = function () {
     initialize(catPic);
 };
+let catPicTrueWidth = parseInt(catPic.style.width) + parseInt(borderWidth) * 2;
 
 console.log(window.innerWidth, window.innerHeight);
 
@@ -14,7 +15,7 @@ setInterval(function () {
     switch (direction) {
         case "left-to-right":
             if (parseInt(catPic.style.left) + parseInt(catPic.style.width) + STEP >= window.innerWidth) {
-                catPic.style.left = window.innerWidth - parseInt(catPic.style.width) - parseInt(borderWidth) * 2 + "px";
+                catPic.style.left = window.innerWidth - catPicTrueWidth + "px";
                 direction = "top-to-bottom";
                 break;
             }
@@ -22,7 +23,7 @@ setInterval(function () {
             break;
         case "top-to-bottom":
             if (parseInt(catPic.style.top) + parseInt(catPic.style.height) + STEP >= window.innerHeight) {
-                catPic.style.top = window.innerHeight - parseInt(catPic.style.height) - parseInt(borderWidth) * 2 + "px";
+                catPic.style.top = window.innerHeight - catPicTrueWidth + "px";
                 direction = "right-to-left";
                 break;
             }

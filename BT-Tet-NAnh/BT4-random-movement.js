@@ -147,7 +147,9 @@ function initialize(image) {
 }
 
 function moveRight(object) {
-    object.style.left = parseInt(object.style.left) + STEP + "px";
+    for (let i = 0; i < STEP; i++) {
+        object.style.left = parseInt(object.style.left) + 1 + "px";
+    }
 }
 
 function moveLeft(object) {
